@@ -1,0 +1,11 @@
+cytoscape/r-cytoscape.js
+shiny
+DT
+tibble
+clusterProfiler
+paxtoolsr
+tm
+igraph
+magrittr
+dplyr
+jsonlite

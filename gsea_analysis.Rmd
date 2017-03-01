@@ -1,0 +1,159 @@
+---
+title: "clusterProfiler Test"
+output:
+  md_document:
+    variant: markdown_github
+  html_notebook:
+    toc: yes
+---
+  
+## Purpose
+
+Test out clusterProfiler
+
+## Load libraries
+```{r}
+# Bioconductor
+library(clusterProfiler)
+library(paxtoolsr)
+
+# CRAN
+library(wordcloud)
+library(tm)
+library(igraph)
+library(magrittr)
+library(dplyr)
+```
+
+## Load Gene Sets
+```{r loadGeneSets}
+# clusterProfiler 
+gmtfile <- system.file("extdata", "c5.cc.v5.0.entrez.gmt", package="clusterProfiler")
+c5 <- read.gmt(gmtfile)
+head(c5)
+
+# PC
+pc <- downloadPc2("PathwayCommons.8.Reactome.GSEA.hgnc.gmt.gz", version="8", removePrefix=TRUE)
+
+pcGmt <- data.frame(ont=character(0), gene=character(0))
+for(i in 1:length(names(pc))) {
+  x <- names(pc)[i]
+  pcGmt <- rbind(pcGmt, data.frame(ont=x, gene=pc[[x]]))  
+}
+head(pcGmt)
+
+# Bader EnrichmentMap
+gmt <- read.gmt("Human_GOBP_AllPathways_no_GO_iea_February_01_2017_symbol.gmt")
+gmt$ont <- as.character(gmt$ont)
+g1 <- strsplit(gmt$ont, "%")
+g2 <- lapply(g1, function(x) {
+  x[1]
+})
+g3 <- gmt
+g3$ont <- unlist(g2)
+head(g3)
+```
+
+## Load Example Data
+```{r}
+# For Hypergeometric Test
+# REPLACE THIS WITH YOUR ONE GENE LIST. SINGLE COLUMN TEXT FILE, HGNC. 
+gene <- read.table("~/Dropbox/drug_target_tmp/clinical_trial_paper/gene_list.txt", stringsAsFactors = FALSE)
+gene <- gene$V1
+
+# For GSEA
+data(geneList, package="DOSE")
+```
+
+## Run Enrichment Analyses
+```{r}
+# Hypergeometric
+egmt <- enricher(gene, TERM2GENE=pcGmt)
+head(egmt)
+
+barplot(egmt, showCategory=8)
+dotplot(egmt, showCategory=8)
+enrichMap(egmt, n=10, vertex.label.font=0.05)
+
+# GSEA 
+geneList <- sort(geneList, decreasing = TRUE)
+egmt2 <- GSEA(geneList, TERM2GENE=c5, verbose=FALSE)
+gseaplot(egmt2, "NUCLEOPLASM")
+```
+
+## igraph Objects returned convertable to cytoscape
+```{r}
+b <- enrichMap(egmt2, n=6)
+a <- cnetplot(egmt2, categorySize="pvalue", foldChange=geneList, vertex.label.font=0.05)
+
+class(b)
+class(a)
+```
+
+## Make Word Cloud from PC GMT
+```{r}
+# Wordcloud
+corpus <- Corpus(VectorSource(sample(g3$ont, 10000)))
+corpus <- tm_map(corpus, PlainTextDocument)
+#corpus <- tm_map(corpus, removePunctuation, preserve_intra_word_dashes=TRUE)
+corpus <- tm_map(corpus, removeWords, stopwords('english'))
+corpus <- tm_map(corpus, removeWords, c("events", "synthesis", "causes", "pathway", "superpathway", "regulation", "process"))
+wordcloud(corpus, max.words = 25, random.order = FALSE)
+```
+
+## Get communities (modules)
+```{r}
+x <- enrichMap(egmt, n=10, vertex.label.font=0.05)
+ebc <- cluster_edge_betweenness(x)
+e1 <- membership(ebc)
+
+e2 <- names(which(e1 == 1))
+e3 <- gsub("[[:punct:]]", " ", e2)
+
+corpus <- Corpus(VectorSource(e3))
+corpus <- tm_map(corpus, PlainTextDocument)
+#corpus <- tm_map(corpus, removePunctuation, preserve_intra_word_dashes=TRUE)
+#corpus <- tm_map(corpus, removeWords, stopwords('english'))
+#corpus <- tm_map(corpus, removeWords, c("events", "synthesis", "causes", "pathway", "superpathway", "regulation", "process"))
+
+dtm <- TermDocumentMatrix(corpus)
+freq <- colSums(as.matrix(dtm))
+findFreqTerms(dtm)
+
+terms <- findFreqTerms(dtm)
+termFreq <- dtm[terms,] %>%
+      as.matrix() %>%
+      rowSums()  %>% 
+      data.frame(Term = terms, Frequency = .) %>%  
+      arrange(desc(Frequency))
+
+tf1 <- termFreq[termFreq$Frequency > 1,]
+
+ebcGenes <- NULL 
+for(i in 1:length(e2)) {
+  genesInPathway <- gene[gene %in% pc[[e2[i]]]]
+  
+  ebcGenes <- c(ebcGenes, genesInPathway)
+}
+
+ebcGenes <- unique(ebcGenes)
+
+wordcloud(corpus, max.words = 25, min.freq=3, random.order = FALSE)
+
+# Recurrent words in module and frequency
+tf1
+
+# Genes in module
+ebcGenes
+```
+
+## Write igraph to cytoscape.js in JSON file
+* Example: http://jsbin.com/sifuxopase/1/edit?js,output
+```{r}
+source("toCytoscape.R")
+library(jsonlite)
+bg <- toCytoscape(x)
+bg
+
+write(bg, "enrich.json")
+```
