@@ -7,7 +7,7 @@ COPY runInstallPackages.R /
 RUN R -e 'source("runInstallPackages.R")'
 
 # Copy sample apps
-COPY * /srv/shiny-server/emdemo/
+COPY ./ /srv/shiny-server/emdemo/
 
 # Expose Shiny server
 EXPOSE 3838

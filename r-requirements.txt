@@ -9,3 +9,4 @@ igraph
 magrittr
 dplyr
 jsonlite
+shinythemes

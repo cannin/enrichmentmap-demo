@@ -1,6 +1,7 @@
 library(shiny)
 library(DT)
 library(rcytoscapejs)
+library(shinythemes)
 
 # initialGeneSet <- "BRAF\nALK\nROS1\nHRAS\nNRAS\nNF1\nFLT3\nKRAS\nEGFR\nMYC\nMET\nROS\nNTRK1\nMAP2K2\nMAP2K1\nIDH1\nBCL2\nIDH2\nBRCA1\nBRCA2\nMLL\nTP53\nRARA\nPDGFRB\nPDGFRA\nRET\nKIT"
 
@@ -12,12 +13,12 @@ initialGeneSet <- paste(initialGeneSet, collapse="\n")
 
 shinyUI(
   navbarPage("PC EnrichmentMap-Lite",
-             theme = shinythemes::shinytheme("flatly"),
+             theme = shinytheme("flatly"),
              tabPanel("Run Analysis",
                       sidebarLayout(
                         sidebarPanel(
                           width=3,
-                          textAreaInput("geneList", "Gene List", initialGeneSet, 
+                          textAreaInput("geneList", "Gene List", initialGeneSet,
                                         rows=16, resize='vertical'),
                           numericInput("curCluster", "Current Enrichment Map Cluster", value=1, min=1),
                           uiOutput("clusterPathways")
