@@ -41,6 +41,7 @@ for(i in 1:length(names(pc))) {
   pcGmt <- rbind(pcGmt, data.frame(ont=x, gene=pc[[x]]))  
 }
 head(pcGmt)
+saveRDS(pcGmt, "reactomeClusterProfilerGmt.rds")
 
 # Bader EnrichmentMap
 gmt <- read.gmt("Human_GOBP_AllPathways_no_GO_iea_February_01_2017_symbol.gmt")
