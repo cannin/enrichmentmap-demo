@@ -1,0 +1,369 @@
+{
+  "data": {},
+  "elements": {
+    "nodes": [
+      {
+        "data": {
+          "name": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "color": "#FF0000",
+          "size": 9.5424,
+          "id": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION"
+        }
+      },
+      {
+        "data": {
+          "name": "RECOMBINATIONAL REPAIR",
+          "color": "#FF0000",
+          "size": 9.5424,
+          "id": "RECOMBINATIONAL REPAIR"
+        }
+      },
+      {
+        "data": {
+          "name": "MITOTIC RECOMBINATION",
+          "color": "#FF0000",
+          "size": 7.7815,
+          "id": "MITOTIC RECOMBINATION"
+        }
+      },
+      {
+        "data": {
+          "name": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "color": "#FF0000",
+          "size": 6.9897,
+          "id": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS"
+        }
+      },
+      {
+        "data": {
+          "name": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "color": "#FE0504",
+          "size": 6.9897,
+          "id": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS"
+        }
+      },
+      {
+        "data": {
+          "name": "SUMOYLATION",
+          "color": "#FD0705",
+          "size": 6.9897,
+          "id": "SUMOYLATION"
+        }
+      },
+      {
+        "data": {
+          "name": "TELOMERE MAINTENANCE",
+          "color": "#FB1B14",
+          "size": 6.9897,
+          "id": "TELOMERE MAINTENANCE"
+        }
+      },
+      {
+        "data": {
+          "name": "MEIOSIS I",
+          "color": "#E8A87F",
+          "size": 6.0206,
+          "id": "MEIOSIS I"
+        }
+      },
+      {
+        "data": {
+          "name": "REGULATION OF CHROMOSOME SEGREGATION",
+          "color": "#E6BC8E",
+          "size": 6.0206,
+          "id": "REGULATION OF CHROMOSOME SEGREGATION"
+        }
+      },
+      {
+        "data": {
+          "name": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "color": "#E5C494",
+          "size": 4.7712,
+          "id": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "RECOMBINATIONAL REPAIR",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "MITOTIC RECOMBINATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "MITOTIC RECOMBINATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "width": 2.7386
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "width": 2.7386
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "SUMOYLATION",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "SUMOYLATION",
+          "width": 2.3355
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "SUMOYLATION",
+          "width": 2.7386
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "SUMOYLATION",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "target": "SUMOYLATION",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 2.8284
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 2.8284
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 3.3806
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 2.9277
+        }
+      },
+      {
+        "data": {
+          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 2.9277
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION",
+          "target": "TELOMERE MAINTENANCE",
+          "width": 2.9277
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "MEIOSIS I",
+          "width": 2.4495
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "MEIOSIS I",
+          "width": 2.4495
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "MEIOSIS I",
+          "width": 2.2361
+        }
+      },
+      {
+        "data": {
+          "source": "TELOMERE MAINTENANCE",
+          "target": "MEIOSIS I",
+          "width": 2.3905
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 2.4495
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 2.4495
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.6515
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "TELOMERE MAINTENANCE",
+          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 2
+        }
+      },
+      {
+        "data": {
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 2
+        }
+      },
+      {
+        "data": {
+          "source": "MITOTIC RECOMBINATION",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.4641
+        }
+      },
+      {
+        "data": {
+          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.4641
+        }
+      },
+      {
+        "data": {
+          "source": "SUMOYLATION",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.4641
+        }
+      },
+      {
+        "data": {
+          "source": "TELOMERE MAINTENANCE",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.4641
+        }
+      },
+      {
+        "data": {
+          "source": "REGULATION OF CHROMOSOME SEGREGATION",
+          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "width": 3.873
+        }
+      }
+    ]
+  }
+}
