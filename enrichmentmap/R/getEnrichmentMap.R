@@ -14,9 +14,9 @@
 #' @export 
 getEnrichmentMap <- function(genes, curCluster=1, curPathway="RAF activation") {
   # DEMO ----
-  genes <- c("BRAF", "TP53", "MDM2")
-  curCluster <- 1
-  curPathway <- "RAF activation"
+  #genes <- c("BRAF", "TP53", "MDM2")
+  #curCluster <- 1
+  #curPathway <- "RAF activation"
   
   # LOAD DATA ----
   pcGmtPath <- system.file("extdata", "pcGmt.rds", package="enrichmentmap")
@@ -44,38 +44,40 @@ getEnrichmentMap <- function(genes, curCluster=1, curPathway="RAF activation") {
   cat("Max Clusters: ", max(e1), "\n")
   
   # GET TERM-COUNT ----
-  termCountDf <- tryCatch({
-    e3 <- gsub("[[:punct:]]", " ", clusterMembers)
-    corpus <- Corpus(VectorSource(e3))
-    corpus <- tm_map(corpus, PlainTextDocument)
-    #corpus <- tm_map(corpus, removePunctuation, preserve_intra_word_dashes=TRUE)
-    corpus <- tm_map(corpus, removeWords, stopwords('english'))
-    #corpus <- tm_map(corpus, removeWords, c("events", "synthesis", "causes", "pathway", "superpathway", "regulation", "process"))
-    dtm <- TermDocumentMatrix(corpus)
-    freq <- colSums(as.matrix(dtm))
-    findFreqTerms(dtm)
-    
-    terms <- findFreqTerms(dtm)
-    termFreq <- dtm[terms,] %>%
-      as.matrix() %>%
-      rowSums()  %>% 
-      data.frame(Term = terms, Frequency = .) %>%  
-      arrange(desc(Frequency))
-    termCountDf <- termFreq[termFreq$Frequency > 1,]
-    
-    colnames(termCountDf) <- c("Term", "Count")
-    
-    if(nrow(termCountDf) > 10) {
-      termCountDf <- termCountDf[1:10,]
-    }
-    
-    termCountDf
-  }, error = function(e) {
-    #cat("ERROR: ", e, "\n")
-    message(e)
-    
-    termCountDf <- NULL
-  })
+  # termCountDf <- tryCatch({
+  #   e3 <- gsub("[[:punct:]]", " ", clusterMembers)
+  #   corpus <- Corpus(VectorSource(e3))
+  #   corpus <- tm_map(corpus, PlainTextDocument)
+  #   #corpus <- tm_map(corpus, removePunctuation, preserve_intra_word_dashes=TRUE)
+  #   corpus <- tm_map(corpus, removeWords, stopwords('english'))
+  #   #corpus <- tm_map(corpus, removeWords, c("events", "synthesis", "causes", "pathway", "superpathway", "regulation", "process"))
+  #   dtm <- TermDocumentMatrix(corpus)
+  #   freq <- colSums(as.matrix(dtm))
+  #   findFreqTerms(dtm)
+  # 
+  #   terms <- findFreqTerms(dtm)
+  #   termFreq <- dtm[terms,] %>%
+  #     as.matrix() %>%
+  #     rowSums()  %>%
+  #     data.frame(Term = terms, Frequency = .) %>%
+  #     arrange(desc(Frequency))
+  #   termCountDf <- termFreq[termFreq$Frequency > 1,]
+  # 
+  #   colnames(termCountDf) <- c("Term", "Count")
+  # 
+  #   if(nrow(termCountDf) > 10) {
+  #     termCountDf <- termCountDf[1:10,]
+  #   }
+  # 
+  #   termCountDf
+  # }, error = function(e) {
+  #   #cat("ERROR: ", e, "\n")
+  #   message(e)
+  # 
+  #   termCountDf <- NULL
+  # })
+  
+  termCountDf <- data.frame(Term="TERM", Count=0, stringsAsFactors = FALSE)
   
   # GET GENE-COUNT DF ----
   idx <- which(egmt$ID %in% clusterMembers)
@@ -112,9 +114,14 @@ getEnrichmentMap <- function(genes, curCluster=1, curPathway="RAF activation") {
   
   # GET CURRENT PATHWAY ----
   idx <- reactomeSifSplit[[curPathway]]
-  curPathwayEdges <- reactomeSifDf$edges[idx, 1:3]
-  intTypes <- getSifInteractionCategories()
-  curPathwayEdges <- filterSif(curPathwayEdges, interactionTypes = intTypes$BetweenProteins)
+  tmpCurPathwayEdges <- reactomeSifDf$edges[idx, 1:3]
+  #intTypes <- getSifInteractionCategories()
+  #curPathwayEdges <- filterSif(curPathwayEdges, interactionTypes = intTypes$BetweenProteins)
+  
+  intTypes <- c("controls-state-change-of", "controls-expression-of", "controls-degradation-of", 
+    "controls-transport-of", "catalysis-precedes", "in-complex-with")
+  idx <- which(tmpCurPathwayEdges$INTERACTION_TYPE %in% intTypes)
+  curPathwayEdges <- tmpCurPathwayEdges[idx,]
   
   cat("CP: ", str(curPathwayEdges), "\n")
   
@@ -138,7 +145,9 @@ getEnrichmentMap <- function(genes, curCluster=1, curPathway="RAF activation") {
                   curPathwayCyNetwork=curPathwayCyNetwork)  
 
   # SAVE TO JSON ----
+  ## No asJSON for igraph
   results$g <- NULL
+  
   tmp <- toJSON(results, pretty = TRUE)
   fileConn <- file("tmp.json")
   writeLines(tmp, fileConn)

@@ -4,9 +4,25 @@
     "nodes": [
       {
         "data": {
+          "name": "RECIPROCAL DNA RECOMBINATION",
+          "color": "#FF0000",
+          "size": 7.7815,
+          "id": "RECIPROCAL DNA RECOMBINATION"
+        }
+      },
+      {
+        "data": {
+          "name": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "color": "#FF0000",
+          "size": 7.7815,
+          "id": "RECIPROCAL MEIOTIC RECOMBINATION"
+        }
+      },
+      {
+        "data": {
           "name": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
           "color": "#FF0000",
-          "size": 9.5424,
+          "size": 7.7815,
           "id": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION"
         }
       },
@@ -14,76 +30,95 @@
         "data": {
           "name": "RECOMBINATIONAL REPAIR",
           "color": "#FF0000",
-          "size": 9.5424,
+          "size": 7.7815,
           "id": "RECOMBINATIONAL REPAIR"
         }
       },
       {
         "data": {
-          "name": "MITOTIC RECOMBINATION",
+          "name": "MEIOSIS I",
           "color": "#FF0000",
           "size": 7.7815,
-          "id": "MITOTIC RECOMBINATION"
-        }
-      },
-      {
-        "data": {
-          "name": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "color": "#FF0000",
-          "size": 6.9897,
-          "id": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS"
-        }
-      },
-      {
-        "data": {
-          "name": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "color": "#FE0504",
-          "size": 6.9897,
-          "id": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS"
-        }
-      },
-      {
-        "data": {
-          "name": "SUMOYLATION",
-          "color": "#FD0705",
-          "size": 6.9897,
-          "id": "SUMOYLATION"
-        }
-      },
-      {
-        "data": {
-          "name": "TELOMERE MAINTENANCE",
-          "color": "#FB1B14",
-          "size": 6.9897,
-          "id": "TELOMERE MAINTENANCE"
-        }
-      },
-      {
-        "data": {
-          "name": "MEIOSIS I",
-          "color": "#E8A87F",
-          "size": 6.0206,
           "id": "MEIOSIS I"
         }
       },
       {
         "data": {
-          "name": "REGULATION OF CHROMOSOME SEGREGATION",
-          "color": "#E6BC8E",
-          "size": 6.0206,
-          "id": "REGULATION OF CHROMOSOME SEGREGATION"
+          "name": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "color": "#FF0000",
+          "size": 6.9897,
+          "id": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES"
         }
       },
       {
         "data": {
-          "name": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "name": "RESOLUTION OF D-LOOP STRUCTURES",
+          "color": "#FF0000",
+          "size": 6.9897,
+          "id": "RESOLUTION OF D-LOOP STRUCTURES"
+        }
+      },
+      {
+        "data": {
+          "name": "CHROMOSOME SEPARATION",
+          "color": "#FE0101",
+          "size": 6.0206,
+          "id": "CHROMOSOME SEPARATION"
+        }
+      },
+      {
+        "data": {
+          "name": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "color": "#FE0302",
+          "size": 6.9897,
+          "id": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)"
+        }
+      },
+      {
+        "data": {
+          "name": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "color": "#E5C494",
           "size": 4.7712,
-          "id": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION"
+          "id": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES"
         }
       }
     ],
     "edges": [
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "RECOMBINATIONAL REPAIR",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "RECOMBINATIONAL REPAIR",
+          "width": 3.1623
+        }
+      },
       {
         "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
@@ -93,275 +128,261 @@
       },
       {
         "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "MEIOSIS I",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "MEIOSIS I",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "MITOTIC RECOMBINATION",
+          "target": "MEIOSIS I",
           "width": 3.1623
         }
       },
       {
         "data": {
           "source": "RECOMBINATIONAL REPAIR",
-          "target": "MITOTIC RECOMBINATION",
+          "target": "MEIOSIS I",
           "width": 3.1623
         }
       },
       {
         "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "width": 4.0825
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "width": 4.0825
+        }
+      },
+      {
+        "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
-          "source": "RECOMBINATIONAL REPAIR",
-          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
           "width": 2.7386
         }
       },
       {
         "data": {
-          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
           "source": "RECOMBINATIONAL REPAIR",
-          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
           "width": 2.7386
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "target": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "width": 4.4721
+          "source": "MEIOSIS I",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "width": 4.0825
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
+          "width": 4.0825
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
+          "width": 4.0825
         }
       },
       {
         "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "SUMOYLATION",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
-          "source": "RECOMBINATIONAL REPAIR",
-          "target": "SUMOYLATION",
-          "width": 2.3355
-        }
-      },
-      {
-        "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "SUMOYLATION",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
           "width": 2.7386
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "target": "SUMOYLATION",
-          "width": 4.4721
-        }
-      },
-      {
-        "data": {
-          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "target": "SUMOYLATION",
-          "width": 4.4721
-        }
-      },
-      {
-        "data": {
-          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "TELOMERE MAINTENANCE",
-          "width": 2.8284
-        }
-      },
-      {
-        "data": {
           "source": "RECOMBINATIONAL REPAIR",
-          "target": "TELOMERE MAINTENANCE",
-          "width": 2.8284
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
+          "width": 2.7386
         }
       },
       {
         "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "TELOMERE MAINTENANCE",
-          "width": 3.3806
+          "source": "MEIOSIS I",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
+          "width": 4.0825
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "target": "TELOMERE MAINTENANCE",
+          "source": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "target": "RESOLUTION OF D-LOOP STRUCTURES",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "CHROMOSOME SEPARATION",
           "width": 2.9277
         }
       },
       {
         "data": {
-          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "target": "TELOMERE MAINTENANCE",
-          "width": 2.9277
-        }
-      },
-      {
-        "data": {
-          "source": "SUMOYLATION",
-          "target": "TELOMERE MAINTENANCE",
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "CHROMOSOME SEPARATION",
           "width": 2.9277
         }
       },
       {
         "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "MEIOSIS I",
-          "width": 2.4495
-        }
-      },
-      {
-        "data": {
-          "source": "RECOMBINATIONAL REPAIR",
-          "target": "MEIOSIS I",
-          "width": 2.4495
-        }
-      },
-      {
-        "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "MEIOSIS I",
+          "target": "CHROMOSOME SEPARATION",
           "width": 2.2361
         }
       },
       {
         "data": {
-          "source": "TELOMERE MAINTENANCE",
-          "target": "MEIOSIS I",
-          "width": 2.3905
+          "source": "RECOMBINATIONAL REPAIR",
+          "target": "CHROMOSOME SEPARATION",
+          "width": 2.2361
+        }
+      },
+      {
+        "data": {
+          "source": "MEIOSIS I",
+          "target": "CHROMOSOME SEPARATION",
+          "width": 2.9277
+        }
+      },
+      {
+        "data": {
+          "source": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "target": "CHROMOSOME SEPARATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RESOLUTION OF D-LOOP STRUCTURES",
+          "target": "CHROMOSOME SEPARATION",
+          "width": 3.1623
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 4.0825
+        }
+      },
+      {
+        "data": {
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 4.0825
         }
       },
       {
         "data": {
           "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 2.4495
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 2.7386
         }
       },
       {
         "data": {
           "source": "RECOMBINATIONAL REPAIR",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 2.4495
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 2.7386
         }
       },
       {
         "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 3.6515
+          "source": "MEIOSIS I",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 4.0825
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "RESOLUTION OF D-LOOP STRUCTURES",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "width": 4.4721
+        }
+      },
+      {
+        "data": {
+          "source": "CHROMOSOME SEPARATION",
+          "target": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
           "width": 3.1623
         }
       },
       {
         "data": {
-          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "RECIPROCAL DNA RECOMBINATION",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.1623
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "RECIPROCAL MEIOTIC RECOMBINATION",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.1623
         }
       },
       {
         "data": {
-          "source": "TELOMERE MAINTENANCE",
-          "target": "REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "MEIOSIS I",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.1623
         }
       },
       {
         "data": {
-          "source": "DOUBLE-STRAND BREAK REPAIR VIA HOMOLOGOUS RECOMBINATION",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 2
-        }
-      },
-      {
-        "data": {
-          "source": "RECOMBINATIONAL REPAIR",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 2
-        }
-      },
-      {
-        "data": {
-          "source": "MITOTIC RECOMBINATION",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 3.1623
-        }
-      },
-      {
-        "data": {
-          "source": "SUMOYLATION OF DNA DAMAGE RESPONSE AND REPAIR PROTEINS",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "RESOLUTION OF D-LOOP STRUCTURES THROUGH HOLLIDAY JUNCTION INTERMEDIATES",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.4641
         }
       },
       {
         "data": {
-          "source": "SUMO E3 LIGASES SUMOYLATE TARGET PROTEINS",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "RESOLUTION OF D-LOOP STRUCTURES",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.4641
         }
       },
       {
         "data": {
-          "source": "SUMOYLATION",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 3.4641
-        }
-      },
-      {
-        "data": {
-          "source": "TELOMERE MAINTENANCE",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
-          "width": 3.4641
-        }
-      },
-      {
-        "data": {
-          "source": "REGULATION OF CHROMOSOME SEGREGATION",
-          "target": "POSITIVE REGULATION OF CHROMOSOME SEGREGATION",
+          "source": "CHROMOSOME SEPARATION",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
           "width": 3.873
+        }
+      },
+      {
+        "data": {
+          "source": "HDR THROUGH HOMOLOGOUS RECOMBINATION (HRR)",
+          "target": "RESOLUTION OF MEIOTIC RECOMBINATION INTERMEDIATES",
+          "width": 3.4641
         }
       }
     ]

@@ -1,22 +1,20 @@
 Package: enrichmentmap
 Title: enrichmentmap
-Version: 0.1.1
-Date: 2017-07-24
+Version: 0.1.4
+Date: 2017-08-25
 Author: Augustin Luna
 Maintainer: Augustin Luna <aluna@jimmy.harvard.edu>
 Description: Demo
 License: LGPL-3
 Depends:
-    R (>= 3.1.1),
+    R (>= 3.3),
     tibble,
-    clusterProfiler,
-    paxtoolsr,
-    tm,
     igraph,
     magrittr,
     dplyr,
     jsonlite, 
-    rcytoscapejs
+    rcytoscapejs,
+    clusterProfiler
 LazyData: true
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1
